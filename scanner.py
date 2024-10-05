@@ -51,7 +51,7 @@ for channel in channels:
             download_flag = input("Do you want to download this video? (y/n): ")
             if download_flag == "y":
                 ydl_opts = {
-                    'format': 'best',
+                    'format': 'bestvideo+bestaudio/best',
                     'outtmpl': f'{title}.mp4',
                 }
                 with yt_dlp.YoutubeDL(ydl_opts) as ydl:
