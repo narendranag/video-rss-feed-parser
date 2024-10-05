@@ -32,7 +32,7 @@ for feed in feeds:
     elif 'watch' in feed:
         videos.append(feed)
 
-for each channel in channels:
+for channel in channels:
     print(channel)
     # Parse the RSS feed
     feed = feedparser.parse(channel)
@@ -43,7 +43,8 @@ for each channel in channels:
         for entry in feed.entries:
             title = entry.title
             link = entry.link
+            author = entry.author
             published = entry.published
-            print(f"Title: {title}\nLink: {link}\nPublished at: {published}\n")
+            print(f"Author: {author}\nTitle: {title}\nLink: {link}\nPublished at: {published}\n")
     else:
         print("Error fetching the RSS feed.")
