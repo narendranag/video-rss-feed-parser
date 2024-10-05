@@ -7,6 +7,7 @@ If the feed is a YouTube video, add to videos
 
 '''
 import feedparser
+import yt_dlp
 
 
 # Path to the file containing the list of RSS feeds
@@ -45,5 +46,17 @@ for channel in channels:
             author = entry.author
             published = entry.published
             print(f"Author: {author}\nTitle: {title}\nLink: {link}\nPublished at: {published}\n")
+
+            download_flag = "n"
+            download_flag = input("Do you want to download this video? (y/n): ")
+            if download_flag == "y":
+                ydl_opts = {
+                    'format': 'best',
+                    'outtmpl': f'{title}.mp4',
+                }
+                with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                    ydl.download([link])
+            else:
+                print("Video not downloaded.")
     else:
         print("Error fetching the RSS feed.")

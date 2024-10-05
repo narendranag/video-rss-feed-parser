@@ -177,3 +177,17 @@ cython_debug/
 
 # Ignore all txt files
 *.txt
+
+# Ignore all video files
+*.mp4
+*.avi
+*.mov
+*.flv
+*.wmv
+*.mkv
+*.webm
+*.vob
+*.ogv
+*.ogg
+*.drc
+*.mng
