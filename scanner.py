@@ -1,12 +1,11 @@
 '''
 Open a local file and read its content
 Each line is an RSS feed to be scanned
-If the feed is a YouTube channel, add it to the list of channels to be scanned
-If the feed is a YouTube playlist, add it to the list of playlists to be scanned
-If the feed is a YouTube video, add it to the list of videos to be scanned
+If the feed is a YouTube channel, add to channels 
+If the feed is a YouTube playlist, add to playlists
+If the feed is a YouTube video, add to videos
 
 '''
-import os
 import feedparser
 
 
